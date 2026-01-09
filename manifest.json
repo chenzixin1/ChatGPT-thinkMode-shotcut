@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "ChatGPT Mode Switcher",
+  "version": "0.1.0",
+  "description": "Pinned mode panel and keyboard shortcuts for ChatGPT mode switching.",
+  "icons": {
+    "16": "src/icons/icon-16.svg",
+    "32": "src/icons/icon-32.svg",
+    "48": "src/icons/icon-48.svg",
+    "128": "src/icons/icon-128.svg"
+  },
+  "action": {
+    "default_title": "ChatGPT Mode Switcher",
+    "default_popup": "src/options.html"
+  },
+  "options_page": "src/options.html",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://chat.openai.com/*",
+    "https://chatgpt.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chat.openai.com/*",
+        "https://chatgpt.com/*"
+      ],
+      "js": ["src/content.js"],
+      "css": ["src/content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}

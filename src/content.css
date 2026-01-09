@@ -1,0 +1,166 @@
+:root {
+  --cgpt-panel-bg: rgba(20, 20, 20, 0.92);
+  --cgpt-panel-border: rgba(255, 255, 255, 0.12);
+  --cgpt-panel-text: #f5f5f5;
+  --cgpt-panel-muted: rgba(255, 255, 255, 0.6);
+  --cgpt-panel-accent: #5aa9ff;
+  --cgpt-panel-accent-bg: rgba(90, 169, 255, 0.18);
+  --cgpt-panel-danger: #ff6b6b;
+  --cgpt-panel-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  --cgpt-panel-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+#cgpt-mode-switcher {
+  position: fixed;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: var(--cgpt-panel-bg);
+  color: var(--cgpt-panel-text);
+  border: 1px solid var(--cgpt-panel-border);
+  box-shadow: var(--cgpt-panel-shadow);
+  font-family: var(--cgpt-panel-font);
+  min-width: 260px;
+  max-width: 420px;
+}
+
+#cgpt-mode-switcher.cgpt-position-input-above {
+  right: 24px;
+  bottom: 140px;
+}
+
+#cgpt-mode-switcher.cgpt-position-input-below {
+  right: 24px;
+  bottom: 60px;
+}
+
+#cgpt-mode-switcher.cgpt-position-top {
+  right: 24px;
+  top: 80px;
+}
+
+#cgpt-mode-switcher.cgpt-position-side {
+  right: 24px;
+  top: 40%;
+  transform: translateY(-40%);
+}
+
+#cgpt-mode-switcher.cgpt-disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.cgpt-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.cgpt-panel-title {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+.cgpt-panel-subtitle {
+  font-size: 11px;
+  color: var(--cgpt-panel-muted);
+}
+
+.cgpt-panel-gear {
+  border: none;
+  background: transparent;
+  color: var(--cgpt-panel-muted);
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px;
+  border-radius: 6px;
+}
+
+.cgpt-panel-gear:hover {
+  color: var(--cgpt-panel-text);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.cgpt-mode-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cgpt-group-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--cgpt-panel-muted);
+}
+
+.cgpt-mode-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.cgpt-mode-button {
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.06);
+  color: var(--cgpt-panel-text);
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.cgpt-mode-button:hover {
+  border-color: var(--cgpt-panel-accent);
+  background: var(--cgpt-panel-accent-bg);
+}
+
+.cgpt-mode-button.cgpt-active {
+  border-color: var(--cgpt-panel-accent);
+  background: var(--cgpt-panel-accent-bg);
+  color: #eaf2ff;
+  font-weight: 600;
+}
+
+.cgpt-mode-button.cgpt-unavailable {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+#cgpt-toast {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  background: rgba(24, 24, 24, 0.95);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 10px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: var(--cgpt-panel-shadow);
+  font-family: var(--cgpt-panel-font);
+  font-size: 12px;
+  z-index: 10000;
+}
+
+#cgpt-toast button {
+  border: none;
+  background: var(--cgpt-panel-accent);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+#cgpt-toast.cgpt-toast-error {
+  border-color: rgba(255, 107, 107, 0.5);
+}
