@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChatGPT Mode Switcher Settings</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <div class="options-container">
+      <header>
+        <h1>ChatGPT Mode Switcher</h1>
+        <p class="notice">Configure panel position, hotkeys, and behavior.</p>
+      </header>
+
+      <section>
+        <h2>Panel</h2>
+        <fieldset>
+          <label for="panelPosition">Panel position</label>
+          <select id="panelPosition" name="panelPosition">
+            <option value="input-above">Input above (default)</option>
+            <option value="input-below">Input below</option>
+            <option value="top">Top bar</option>
+            <option value="side">Side</option>
+          </select>
+
+          <div class="toggle-row">
+            <span>Show tooltips</span>
+            <input type="checkbox" id="showTooltip" />
+          </div>
+          <div class="toggle-row">
+            <span>Show toast notifications</span>
+            <input type="checkbox" id="showToast" />
+          </div>
+        </fieldset>
+      </section>
+
+      <section>
+        <h2>Hotkeys</h2>
+        <p class="notice">Use combos like <strong>Alt+1</strong> or <strong>Ctrl+Shift+P</strong>.</p>
+        <div class="hotkey-grid">
+          <label>Auto
+            <input type="text" data-hotkey="auto" />
+          </label>
+          <label>Instant
+            <input type="text" data-hotkey="instant" />
+          </label>
+          <label>Thinking Light
+            <input type="text" data-hotkey="thinking-light" />
+          </label>
+          <label>Thinking Standard
+            <input type="text" data-hotkey="thinking-standard" />
+          </label>
+          <label>Thinking Extended
+            <input type="text" data-hotkey="thinking-extended" />
+          </label>
+          <label>Thinking Heavy
+            <input type="text" data-hotkey="thinking-heavy" />
+          </label>
+          <label>Pro
+            <input type="text" data-hotkey="pro" />
+          </label>
+          <label>Pro Extend
+            <input type="text" data-hotkey="pro-extend" />
+          </label>
+          <label>Previous mode
+            <input type="text" data-hotkey="previous" />
+          </label>
+        </div>
+        <p class="notice" id="hotkeyWarning"></p>
+      </section>
+
+      <section>
+        <h2>Behavior</h2>
+        <fieldset>
+          <div class="toggle-row">
+            <span>Enable switch to previous mode (Alt+0 by default)</span>
+            <input type="checkbox" id="enablePreviousMode" />
+          </div>
+          <div class="toggle-row">
+            <span>Allow hotkeys while typing</span>
+            <input type="checkbox" id="allowWhenTyping" />
+          </div>
+          <div class="toggle-row">
+            <span>Allow automatic menu clicking</span>
+            <input type="checkbox" id="allowAutoClick" />
+          </div>
+          <label for="theme">Theme</label>
+          <select id="theme" name="theme">
+            <option value="system">Follow system</option>
+            <option value="light">Light</option>
+            <option value="dark">Dark</option>
+          </select>
+        </fieldset>
+      </section>
+
+      <section>
+        <div class="actions">
+          <button id="save">Save settings</button>
+          <button id="reset" class="secondary">Reset to defaults</button>
+        </div>
+        <p class="status" id="status"></p>
+      </section>
+    </div>
+    <script src="options.js"></script>
+  </body>
+</html>
